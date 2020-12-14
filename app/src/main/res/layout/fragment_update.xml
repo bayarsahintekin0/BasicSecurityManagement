@@ -23,7 +23,7 @@
             android:orientation="vertical">
 
             <EditText
-                android:id="@+id/editTextTextPersonName4"
+                android:id="@+id/etInsertAppTag"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -31,7 +31,7 @@
                 android:text="Name" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName5"
+                android:id="@+id/etInsertBatchasset"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -39,7 +39,7 @@
                 android:text="Name" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName6"
+                android:id="@+id/etInsertAeadasset"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -47,7 +47,7 @@
                 android:text="Name" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName7"
+                android:id="@+id/etInsertAssetType"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -55,7 +55,7 @@
                 android:text="Name" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName8"
+                android:id="@+id/etInsertExtraEnformation"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -63,7 +63,7 @@
                 android:text="Name" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName9"
+                android:id="@+id/etInsertDataIndex"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -79,7 +79,7 @@
                 android:text="Name" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName11"
+                android:id="@+id/etInsertAuthenticationLimit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -87,7 +87,7 @@
                 android:text="Name" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName12"
+                android:id="@+id/etInsertSynchronizationLimit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -95,7 +95,7 @@
                 android:text="Name" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName13"
+                android:id="@+id/etInsertAccessLimit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -111,7 +111,7 @@
                 android:text="Name" />
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/btnInsert"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"

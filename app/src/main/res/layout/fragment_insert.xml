@@ -23,15 +23,6 @@
             android:orientation="vertical">
 
             <EditText
-                android:id="@+id/etInsertAppTag"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="App Tag"
-                android:inputType="textPersonName"
-                android:text="com.bayarsahintekin.basicsecuritymanagement" />
-
-            <EditText
                 android:id="@+id/etInsertBatchasset"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

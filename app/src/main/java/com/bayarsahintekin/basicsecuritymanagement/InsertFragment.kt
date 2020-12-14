@@ -22,8 +22,6 @@ class InsertFragment :Fragment() {
     ): View? {
         val root = inflater.inflate(R.layout.fragment_insert, container, false)
 
-
-        val appTag = root.findViewById<EditText>(R.id.etInsertAppTag)
         val batchAsset = root.findViewById<EditText>(R.id.etInsertBatchasset)
         val aeadAsset= root.findViewById<EditText>(R.id.etInsertAeadasset)
         val extraInfo = root.findViewById<EditText>(R.id.etInsertExtraEnformation)
@@ -39,7 +37,7 @@ class InsertFragment :Fragment() {
             val bundle = Bundle()
 
             bundle.apply {
-                putString(HwAssetManager.BUNDLE_APPTAG,appTag.text.toString())
+                putString(HwAssetManager.BUNDLE_APPTAG,"com.bayarsahintekin.basicsecuritymanagement")
                 putString(HwAssetManager.BUNDLE_BATCHASSET,batchAsset.text.toString())
                 putString(HwAssetManager.BUNDLE_AEADASSET,aeadAsset.text.toString())
                 putString(HwAssetManager.BUNDLE_EXTINFO,extraInfo.text.toString())

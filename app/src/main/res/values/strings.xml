@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">BasicSecurityManagement</string>
+    <string name="delete_warning">Are you sure to delete?</string>
 </resources>

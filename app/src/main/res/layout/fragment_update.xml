@@ -23,95 +23,55 @@
             android:orientation="vertical">
 
             <EditText
-                android:id="@+id/etInsertAppTag"
+                android:id="@+id/etUpdateBatchasset"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Name" />
+                android:hint="Batchasset exp:UserName"
+                android:inputType="textPersonName" />
 
             <EditText
-                android:id="@+id/etInsertBatchasset"
+                android:id="@+id/etUpdateAeadasset"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Name" />
+                android:hint="Aeadasset exp:Password"
+                android:inputType="textPersonName" />
 
             <EditText
-                android:id="@+id/etInsertAeadasset"
+                android:id="@+id/etUpdateExtraEnformation"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Name" />
+                android:hint='Extra Information exp:"Extra inf"'
+                android:inputType="textPersonName" />
 
             <EditText
-                android:id="@+id/etInsertAssetType"
+                android:id="@+id/etUpdateAuthenticationLimit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Name" />
+                android:hint="AuthenticationLimit exp :100"
+                android:inputType="textPersonName" />
 
             <EditText
-                android:id="@+id/etInsertExtraEnformation"
+                android:id="@+id/etUpdateSynchronizationLimit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Name" />
+                android:hint="Synchronization Limit exp :100"
+                android:inputType="textPersonName" />
 
             <EditText
-                android:id="@+id/etInsertDataIndex"
+                android:id="@+id/etUpdateAccessLimit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Name" />
-
-            <EditText
-                android:id="@+id/editTextTextPersonName10"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Name" />
-
-            <EditText
-                android:id="@+id/etInsertAuthenticationLimit"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Name" />
-
-            <EditText
-                android:id="@+id/etInsertSynchronizationLimit"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Name" />
-
-            <EditText
-                android:id="@+id/etInsertAccessLimit"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Name" />
-
-            <EditText
-                android:id="@+id/editTextTextPersonName14"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Name" />
+                android:hint="Access Limit exp :100"
+                android:inputType="textPersonName" />
 
             <Button
-                android:id="@+id/btnInsert"
+                android:id="@+id/btnUpdate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"

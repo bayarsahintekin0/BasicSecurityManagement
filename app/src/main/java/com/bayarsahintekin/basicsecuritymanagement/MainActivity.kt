@@ -2,8 +2,9 @@ package com.bayarsahintekin.basicsecuritymanagement
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.TabHost
 import androidx.fragment.app.Fragment
+import com.bayarsahintekin.basicsecuritymanagement.delete.DeleteFragment
+import com.bayarsahintekin.basicsecuritymanagement.select.SelectFragment
 import com.google.android.material.tabs.TabLayout
 
 class MainActivity : AppCompatActivity() {
@@ -14,7 +15,8 @@ class MainActivity : AppCompatActivity() {
         val insertFragment = InsertFragment()
         val updateFragment = UpdateFragment()
         val selectFragment = SelectFragment()
-        val deleteFragment = DeleteFragment()
+        val deleteFragment =
+            DeleteFragment()
 
         changeFragment(insertFragment)
 

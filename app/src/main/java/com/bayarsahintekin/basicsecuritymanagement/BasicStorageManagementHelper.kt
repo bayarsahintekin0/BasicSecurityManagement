@@ -38,14 +38,25 @@ class BasicStorageManagementHelper() {
     }
 
     fun updateData (bundle: Bundle) {
-        bundle.putString(HwAssetManager.BUNDLE_ASSETHANDLE,demoAssetHandle)
-        val result = hwAssetManager.assetUpdate(context,bundle)
-       // onResponse(result,"Asset Insert")
+        val result  = hwAssetManager.assetInsert(context, bundle)
+        if (result.resultCode == HwAssetManager.SUCCESS) {
+            sharedPreferences
+                    .edit()
+                    .putString("asset_handle",result.resultInfo[0])
+                    .apply()
+            Toast.makeText(context,"Your asset successfully updated: " + result.resultInfo[0], Toast.LENGTH_SHORT).show()
+        }else
+            onFailure(result,"Asset Insert")
     }
 
-    fun deleteData(bundle: Bundle) {
+    fun deleteData(bundle: Bundle): Int {
         val result = hwAssetManager.assetDelete(context,bundle)
-      //  onResponse(result,"Asset Insert")
+         if (result.resultCode == HwAssetManager.SUCCESS){
+           return result.resultCode
+        }else {
+             onFailure(result, "Asset Delete")
+             return -1
+        }
     }
 
     fun selectData(bundle: Bundle) :ArrayList<AssetModel>{

@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.core.content.ContentProviderCompat.requireContext
+import com.bayarsahintekin.basicsecuritymanagement.model.AssetModel
+import com.google.gson.Gson
 import com.huawei.security.hwassetmanager.HwAssetManager
 
 /**
@@ -25,34 +27,40 @@ class BasicStorageManagementHelper() {
 
     fun insertData(bundle: Bundle){
         val result  = hwAssetManager.assetInsert(context, bundle)
-        onResponse(result,"Asset Insert")
+        if (result.resultCode == HwAssetManager.SUCCESS) {
+            sharedPreferences
+                .edit()
+                .putString("asset_handle",result.resultInfo[0])
+                .apply()
+            Toast.makeText(context,"Your asset successfully inserted: " + result.resultInfo[0], Toast.LENGTH_SHORT).show()
+        }else
+            onFailure(result,"Asset Insert")
     }
 
     fun updateData (bundle: Bundle) {
         bundle.putString(HwAssetManager.BUNDLE_ASSETHANDLE,demoAssetHandle)
         val result = hwAssetManager.assetUpdate(context,bundle)
-        onResponse(result,"Asset Insert")
+       // onResponse(result,"Asset Insert")
     }
 
     fun deleteData(bundle: Bundle) {
         val result = hwAssetManager.assetDelete(context,bundle)
-        onResponse(result,"Asset Insert")
+      //  onResponse(result,"Asset Insert")
     }
 
-    fun selectData(bundle: Bundle){
+    fun selectData(bundle: Bundle) :ArrayList<AssetModel>{
         val result = hwAssetManager.assetSelect(context,bundle)
-        onResponse(result,"Asset Insert")
+        val gson = Gson()
+        val list :ArrayList<AssetModel> = arrayListOf()
+        for (i in result.resultInfo){
+            list.add(gson.fromJson(i,AssetModel::class.java))
+        }
+
+        return list
     }
 
-    private fun onResponse(result : HwAssetManager.AssetResult,operationTitle :String) {
+    private fun onFailure(result : HwAssetManager.AssetResult,operationTitle :String) {
         when(result.resultCode) {
-            HwAssetManager.SUCCESS -> {
-                sharedPreferences
-                    .edit()
-                    .putString("asset_handle",result.resultInfo[0])
-                    .apply()
-                Toast.makeText(context,"Your asset successfully inserted: " + result.resultInfo[0], Toast.LENGTH_SHORT).show()
-            }
             HwAssetManager.ERROR_CODE_INVALID_ARGUMENT -> {
                 Log.e(operationTitle,"Invalid Arguments"+" errorCode: " + HwAssetManager.ERROR_CODE_INVALID_ARGUMENT )
                 Toast.makeText(context,"Invalid Arguments Error ", Toast.LENGTH_SHORT).show()

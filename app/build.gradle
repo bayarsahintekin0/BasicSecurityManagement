@@ -51,4 +51,6 @@ dependencies {
 
     //Basic Security Kit
     implementation (name: 'securitykit-1.0.1', ext: 'aar')
+
+    implementation "com.squareup.retrofit2:converter-gson:2.9.0"
 }

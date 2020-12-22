@@ -1,4 +1,4 @@
-package com.bayarsahintekin.basicsecuritymanagement.delete
+package com.bayarsahintekin.basicsecuritymanagement.update
 
 import android.view.LayoutInflater
 import android.view.View
@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bayarsahintekin.basicsecuritymanagement.R
 import com.bayarsahintekin.basicsecuritymanagement.model.AssetModel
 
-class DeleteAdapter(private val itemClicked: (item: AssetModel) -> Unit) : RecyclerView.Adapter<DeleteAdapter.ViewHolder>() {
+class UpdateAdapter (private val itemClicked: (item: AssetModel) -> Unit) : RecyclerView.Adapter<UpdateAdapter.ViewHolder>() {
 
     private var list :ArrayList<AssetModel> = arrayListOf()
     override fun getItemCount(): Int {
@@ -21,8 +21,13 @@ class DeleteAdapter(private val itemClicked: (item: AssetModel) -> Unit) : Recyc
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.card_delete_items,parent,false))
-            .apply { itemView.setOnClickListener { itemClicked(list[adapterPosition]) } }
+        return ViewHolder(
+            LayoutInflater.from(parent.context).inflate(
+                R.layout.card_update_items,
+                parent,
+                false
+            )
+        ).apply { itemView.setOnClickListener { itemClicked(list[adapterPosition]) } }
     }
 
     fun setList(list :ArrayList<AssetModel>){
@@ -35,8 +40,8 @@ class DeleteAdapter(private val itemClicked: (item: AssetModel) -> Unit) : Recyc
         private val appTag = itemView.findViewById<TextView>(R.id.tvAppTag)
         private val batch = itemView.findViewById<TextView>(R.id.tvBatchAsset)
         private val extInfo = itemView.findViewById<TextView>(R.id.tvExtraInf)
-        private val assetHandle = itemView.findViewById<TextView>(R.id.tvDeleteAssetHandle)
-        fun bind(asset :AssetModel) {
+        private val assetHandle = itemView.findViewById<TextView>(R.id.tvUpdateAssetHandle)
+        fun bind(asset : AssetModel) {
             appTag.text = asset.aPPTAG
             batch.text = asset.batchAsset
             extInfo.text = asset.extInfo

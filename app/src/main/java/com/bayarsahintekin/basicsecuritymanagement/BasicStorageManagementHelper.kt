@@ -37,7 +37,7 @@ class BasicStorageManagementHelper() {
             onFailure(result,"Asset Insert")
     }
 
-    fun updateData (bundle: Bundle) {
+    fun updateData (bundle: Bundle,block :() -> Unit) {
         val result  = hwAssetManager.assetInsert(context, bundle)
         if (result.resultCode == HwAssetManager.SUCCESS) {
             sharedPreferences
@@ -45,17 +45,18 @@ class BasicStorageManagementHelper() {
                     .putString("asset_handle",result.resultInfo[0])
                     .apply()
             Toast.makeText(context,"Your asset successfully updated: " + result.resultInfo[0], Toast.LENGTH_SHORT).show()
+            block()
         }else
             onFailure(result,"Asset Insert")
     }
 
-    fun deleteData(bundle: Bundle): Int {
+    fun deleteData(bundle: Bundle,block: () -> Unit) {
         val result = hwAssetManager.assetDelete(context,bundle)
          if (result.resultCode == HwAssetManager.SUCCESS){
-           return result.resultCode
+           block()
         }else {
              onFailure(result, "Asset Delete")
-             return -1
+             Toast.makeText(context,"Your asset delete is failure " , Toast.LENGTH_SHORT).show()
         }
     }
 

@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.bayarsahintekin.basicsecuritymanagement.delete.DeleteFragment
 import com.bayarsahintekin.basicsecuritymanagement.select.SelectFragment
+import com.bayarsahintekin.basicsecuritymanagement.update.UpdateFragment
 import com.google.android.material.tabs.TabLayout
 
 class MainActivity : AppCompatActivity() {
@@ -13,7 +14,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val insertFragment = InsertFragment()
-        val updateFragment = UpdateFragment()
+        val updateFragment =
+            UpdateFragment()
         val selectFragment = SelectFragment()
         val deleteFragment =
             DeleteFragment()

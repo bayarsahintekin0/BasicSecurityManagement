@@ -42,11 +42,10 @@ class DeleteFragment :Fragment() {
                 val bundle = Bundle()
                 bundle.apply {
                     putString(HwAssetManager.BUNDLE_APPTAG,"com.bayarsahintekin.basicsecuritymanagement")
-                    putString(HwAssetManager.BUNDLE_ASSETHANDLE,sharedPreferences.getString("asset_handle",""))
+                    putString(HwAssetManager.BUNDLE_ASSETHANDLE,it.assetHandle)
                     putInt(HwAssetManager.BUNDLE_ASSETTYPE, HwAssetManager.ASSET_TYPE_USERNAME_PASSWORD)
                 }
-
-                if (basicStorageManagementHelper.deleteData(bundle) == HwAssetManager.SUCCESS){
+                basicStorageManagementHelper.deleteData(bundle){
                     refreshList()
                 }
             }

@@ -38,7 +38,7 @@ class BasicStorageManagementHelper() {
     }
 
     fun updateData (bundle: Bundle,block :() -> Unit) {
-        val result  = hwAssetManager.assetInsert(context, bundle)
+        val result  = hwAssetManager.assetUpdate(context, bundle)
         if (result.resultCode == HwAssetManager.SUCCESS) {
             sharedPreferences
                     .edit()

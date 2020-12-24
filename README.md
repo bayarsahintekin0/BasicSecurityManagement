@@ -57,4 +57,4 @@
 	You can delete a saved asset using hwAssetManager.assetDelete() method.
 
 ##  License
-    Cloud Storage Codelab is licensed under the [Apache License, version 2.0](http://www.apache.org/licenses/LICENSE-2.0).
+    Basic Security Management is licensed under the [Apache License, version 2.0](http://www.apache.org/licenses/LICENSE-2.0).

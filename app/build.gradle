@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id("org.sonarqube") version "3.0"
 }
 
 android {
@@ -53,4 +54,14 @@ dependencies {
     implementation (name: 'securitykit-1.0.1', ext: 'aar')
 
     implementation "com.squareup.retrofit2:converter-gson:2.9.0"
+}
+
+sonarqube {
+    properties {
+        property "sonar.projectKey", "com.sib.hproperty" // it should be same as website projectKey         property "sonar.projectName", "<proj_name>" //web UI name         property "sonar.login", "<your_token>"
+        property "sonar.projectName", "com.sib.hproperty" //web UI name
+        property "sonar.login", "1d2bc567d42687e6a09f9ca63ddf461cef0fc9aa"
+        property "sonar.host.url", "http://10.216.72.212:9000"
+        property "sonar.projectVersion", android.defaultConfig.versionName
+    }
 }
